@@ -31,13 +31,13 @@ service.interceptors.request.use((config: AxiosRequestConfig) => {
 })
 
 service.interceptors.response.use((res: AxiosResponse) => {
-    const { code, message, data } = res
+    const { status, statusText, data } = res
 
-    if (code === 0) {
+    if (status === 200) {
         return data
     } else {
-        Message.error(message)
-        return Promise.reject(new Error(message))
+        Message.error(statusText)
+        return Promise.reject(new Error(statusText))
     }
 }, (err: AxiosError) => {
     const status = err.response?.status!

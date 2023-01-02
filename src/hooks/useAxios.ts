@@ -1,6 +1,6 @@
 import type { AxiosRequestConfig } from "axios"
 import axios from '../utils/request'
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 interface Response<T> {
     code: string | number
@@ -13,17 +13,21 @@ const useAxios = <T>(config: AxiosRequestConfig) => {
     const [error, setError] = useState(null)
     const [result, setResult] = useState<Response<T> | null>(null)
 
-    setLoading(true)
-    axios(config)
-    .then((res: Response<T>) => {
-        setResult(res)
-    })
-    .catch(err => {
-        setError(err)
-    })
-    .finally(() => {
-        setLoading(false)
-    })
+    useEffect(() => {
+        setLoading(true)
+        axios(config)
+        .then((res: Response<T>) => {
+            console.log('res -->', res)
+            setResult(res)
+        })
+        .catch(err => {
+            setError(err)
+        })
+        .finally(() => {
+            setLoading(false)
+        })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
     return { loading, result, error }
 }
