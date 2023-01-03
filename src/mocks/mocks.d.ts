@@ -1,9 +1,3 @@
-export interface Response<T=any> {
-    code: string | number
-    message: string
-    data?: T
-}
-
 interface Menu {
     menus: MenuItem[]
 }
@@ -21,4 +15,17 @@ type ButtonItem = Omit<MenuItem, 'routerPath' | 'children'>
 
 interface Button {
     buttons: ButtonItem[]
+}
+
+export interface Response<T=any> {
+    code: string | number
+    message: string
+    data?: T
+}
+
+export interface PermissionRes {
+    menus: Menu['menus']
+    buttons: Button['buttons']
+    name: string
+    id: string
 }
