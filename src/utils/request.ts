@@ -14,8 +14,8 @@ const service: AxiosInstance = axios.create({
 })
 
 const STATUS_MAP: StatusMap = {
-    401: 'token失效，请重新登录',
-    500: '请求失败'
+    401: 'token is invalid，please login again',
+    500: 'request failed'
 }
 
 service.interceptors.request.use((config: AxiosRequestConfig) => {
@@ -31,13 +31,13 @@ service.interceptors.request.use((config: AxiosRequestConfig) => {
 })
 
 service.interceptors.response.use((res: AxiosResponse) => {
-    const { status, statusText, data } = res
+    const { code, message, data } = res.data
 
-    if (status === 200) {
+    if (code === 0) {
         return data
     } else {
-        Message.error(statusText)
-        return Promise.reject(new Error(statusText))
+        Message.error(message)
+        return Promise.reject(new Error(message))
     }
 }, (err: AxiosError) => {
     const status = err.response?.status!

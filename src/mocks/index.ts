@@ -9,12 +9,8 @@ Mock.setup({
     timeout: 500
 })
 
-Mock.mock('/test', () => {
-    return Mock.mock({
-        status: 200,
-        statusText: 'ok',
-        data: '测试'
-    })
-})
+if (process.env.NODE_ENV !== 'production') {
+    require('./service/user')
+}
 
 export default Mock

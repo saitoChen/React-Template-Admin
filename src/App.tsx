@@ -6,15 +6,19 @@
 import React from 'react';
 import './App.css';
 import request from './hooks/useAxios'
-if(process.env.NODE_ENV=='development') {
+if (process.env.NODE_ENV === 'development') {
   require('./mocks/index')
 }
 
 function App() {
 
   const { result } = request<any>({
-    url: '/test',
-    method: 'GET'
+    url: '/login',
+    method: 'Post',
+    data: {
+      username: 'Jeffa',
+      password: '123456'
+    }
   })
 
   console.log(result)
