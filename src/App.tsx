@@ -3,29 +3,21 @@
  * @Date: 2023-01-01 10:12:44
  * @Description: 
  */
+import Login from './views/Login/index'
 import React from 'react';
-import './App.css';
+import './App.scss';
+import './reset.scss'
 import request from './hooks/useAxios'
 if (process.env.NODE_ENV === 'development') {
   require('./mocks/index')
 }
 
+
 function App() {
-
-  const { result } = request<any>({
-    url: '/login',
-    method: 'Post',
-    data: {
-      username: 'Jeffa',
-      password: '123456'
-    }
-  })
-
-  console.log(result)
 
   return (
     <div className="App">
-      <div>123</div>
+      <Login />
     </div>
   );
 }

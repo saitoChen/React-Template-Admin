@@ -29,3 +29,8 @@ export interface PermissionRes {
     name: string
     id: string
 }
+
+const x = 'x' as const
+type test =  typeof x
+let a:test = true
+console.log(a)

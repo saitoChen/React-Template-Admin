@@ -44,6 +44,7 @@
     ]
   },
   "devDependencies": {
-    "@types/mockjs": "^1.0.7"
+    "@types/mockjs": "^1.0.7",
+    "sass": "^1.57.1"
   }
 }
