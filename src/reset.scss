@@ -1,11 +1,11 @@
 
 /*css reset code */
  
-body {
-    font-size:62.5%;
-} /* for IE/Win */
+
 html>body {
     font-size:16px;
+    font-family: "source-han-serif-sc", serif, Helvetica, "Helvetica Neue", "Segoe UI", "Hiragino Sans GB", "Source Han Sans CN", "Microsoft YaHei", "STHeiti", "WenQuanYi Micro Hei";
+    color: #555;
 } /* for everything else */
     
 /*字体边框等初始化*/
@@ -35,7 +35,6 @@ caption,th {
 }
 h1,h2,h3,h4,h5,h6 {
     font-weight: normal;
-    font-size: 100%;
 }
 q:before,q:after {
     content:'';
