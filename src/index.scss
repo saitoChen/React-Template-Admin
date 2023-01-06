@@ -1,3 +1,7 @@
+@font-face {
+  font-family: "SourceHanSerif";
+  src: url("./fonts/SourceHanSerif.ttf");
+}
 body {
   margin: 0;
 
@@ -9,5 +13,5 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-$family: "source-han-serif-sc", serif, Helvetica, "Helvetica Neue", "Segoe UI", "Hiragino Sans GB", "Source Han Sans CN", "Microsoft YaHei", "STHeiti", "WenQuanYi Micro Hei";
+// SourceHanSerifCN-Medium
+$family: "SourceHanSerif", serif, Helvetica, "Helvetica Neue", "Segoe UI", "Hiragino Sans GB", "Source Han Sans CN", "Microsoft YaHei", "STHeiti", "WenQuanYi Micro Hei";

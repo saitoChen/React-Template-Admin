@@ -10,7 +10,7 @@ const Login:FC = () => {
         <>
             <section className="login-wrapper flex">
                 <section className="left-section">
-                    <h1 className="font48 bold">天工</h1>
+                    <h1 className="font48 bold">磐石</h1>
                     <h5>react-admin-template</h5>
                 </section>
                 <Divider className="login-diveder" type="vertical" />
