@@ -1,29 +1,48 @@
 @import '../../style/font.scss';
 .login-wrapper {
-    .login-diveder {
-        height: 100px;
-        background-color: #555;
-    }
-    .right-section {
-        .ant-form-item-required {
-            font-family: $family;
-            &::before {
-                color: #555 !important;
-            }
-        }
-        .ant-input, .ant-input-password {
-            width: 200px;
-            border-color: #555;
-            outline: none;
-            font-family: $family;
-        }
-        .ant-btn-default {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    .login-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        .login-diveder {
+            height: 150px;
             background-color: #555;
-            color: #fff;
-            border-color: transparent;
-            &:hover {
-                background-color: #34495e; 
+        }
+        .right-section {
+            .ant-form-item-required {
+                font-family: $family;
+                &::before {
+                    color: #555 !important;
+                }
+            }
+            .ant-input, .ant-input-password {
+                width: 200px;
+                border-color: #555;
+                outline: none;
+                font-family: $family;
+            }
+            .ant-btn-default {
+                background-color: #555;
+                color: #fff;
                 border-color: transparent;
+                &:hover {
+                    background-color: #34495e; 
+                    border-color: transparent;
+                }
+            }
+            .login-btn {
+                display: inline-block;
+                vertical-align: middle;
+            }
+            .quick-login {
+                width: 140px;
+                .ant-select {
+                    width: inherit;
+                }
             }
         }
     }
